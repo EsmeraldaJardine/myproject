@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html>
     <head>
         <img src="{% static 'images/cat.png' %}" alt="Picture of Cat" /><br />
@@ -7,9 +7,31 @@
     </head>
 
     <body>
+
+
         <div>
-            <a href='/pets_for_students/cats/'>Cats</a><br /> 
+            {% if students %}
+            <ul>
+                {% for student in students %}
+                <li>{{ student.first_name }} {{ student.last_name }} has <strong>{{ student.num_of_cats }}</strong> cats</li> <!-- Ensure last_name is accessible -->
+                <ul>
+                    {% for cat in pet_list %}
+                    {% if cat.owner == student %}
+                    <li>
+                        {{ cat.name }}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <strong>There are no students present.</strong>
+            {% endif %}
+        </div>
+
+        <div>
+            Click to go back to <a href='/pets_for_students/cats/'>Cats</a><br /> 
         </div>
     </body>
-    
 </html>

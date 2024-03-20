@@ -7,8 +7,22 @@
     </head>
 
     <body>
+
         <div>
-            <a href='/pets_for_students'>Home</a><br /> 
+            <ul>
+                {% if cats %}
+                {% for cat in cats %}
+                <li>
+                    {{ cat.name }}
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+
+
+        <div>
+            Click to go back to <a href='/pets_for_students'>Home</a><br /> 
         </div>
     </body>
     
