@@ -26,7 +26,7 @@ SECRET_KEY = '0j!^iw^9e3=qhlfb-153ibxo4kk4l1#iip80bb4c*az*4%#p6$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://esmeraldaj.eu.pythonanywhere.com/']
 
 
 # Application definition
