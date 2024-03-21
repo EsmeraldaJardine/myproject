@@ -4,6 +4,10 @@ from pets_for_students.models import Student, Cat
 
 def index(request):
     student_list = Student.objects.order_by('last_name')
+    for student in student_list:
+        num_of_cats = Cat.objects.filter(owner=student).count()
+        student.num_of_cats = num_of_cats
+
     cats_list = Cat.objects.order_by('name')
     context_dict = {}
     context_dict['boldmessage'] = 'The Students and their cats are:'
