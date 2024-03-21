@@ -16,12 +16,12 @@ def index(request):
     return render(request, 'pets_for_students/index.html', context=context_dict)
 
 
-def cats(request):
+def pets(request):
     cats_list = Cat.objects.order_by('name')
     context_dict = {}
     context_dict['boldmessage'] = 'All the cats are:'
     context_dict['cats'] = cats_list
-    return render(request, 'pets_for_students/cats.html', context=context_dict)
+    return render(request, 'pets_for_students/pets.html', context=context_dict)
 
 
 
