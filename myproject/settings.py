@@ -24,7 +24,7 @@ SECRET_KEY_FILE = os.path.join(BASE_DIR, 'secret.key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://esmeraldaj.eu.pythonanywhere.com/', '127.0.0.1:8000', '127.0.0.1']
 
