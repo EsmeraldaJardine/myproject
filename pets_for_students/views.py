@@ -5,7 +5,6 @@ from pets_for_students.models import Student, Cat
 def index(request):
     student_list = Student.objects.order_by('last_name')
     cats_list = Cat.objects.order_by('name')
-    #cat_list = Cat.objects.order_by('num_of_cats') order by???
     context_dict = {}
     context_dict['boldmessage'] = 'The Students and their cats are:'
     context_dict['students'] = student_list

@@ -13,7 +13,13 @@
             {% if students %}
             <ul>
                 {% for student in students %}
-                <li>{{ student.first_name }} {{ student.last_name }} has <strong>{{ student.num_of_cats }}</strong> cats</li> <!-- Ensure last_name is accessible -->
+                <li>{{ student.first_name }} {{ student.last_name }} has <strong>{{ student.num_of_cats }}</strong>
+                    {% if student.num_of_cats == 1 %}
+                    cat
+                    {% else %}
+                    cats 
+                    {% endif %}
+                </li> 
                 <ul>
                     {% for cat in pet_list %}
                     {% if cat.owner == student %}
@@ -31,7 +37,7 @@
         </div>
 
         <div>
-            Click to go back to <a href='/pets_for_students/cats/'>Cats</a><br /> 
+            <a href="{% url 'pets_for_students:cats' %}">Cats</a>
         </div>
     </body>
 </html>
